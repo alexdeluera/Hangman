@@ -53,6 +53,7 @@ namespace Hangman
                 }
 
              while(hidden.Contains("*"))
+             //for(int i=0; i<=5;i++)
             {
                 Console.WriteLine("Word so far:{0}", hidden);
                 Console.WriteLine("Guess a letter: ");
@@ -62,7 +63,7 @@ namespace Hangman
 
                 if(input==name)
                 {
-                    Console.WriteLine("Congrats, the name was {0}!", name);
+                    hidden = name;
                     break;
                 }
                 
@@ -77,21 +78,30 @@ namespace Hangman
                     }
                 }
 
-                for (int i=0; i<name.Length; i++)
+                for (int j=0; j<name.Length; j++)
                 {
                     if (string.Equals(name[0].ToString(),guess.ToString(),StringComparison.OrdinalIgnoreCase))
                     {
                         hidden=hidden.Remove(0,1);
                         hidden=hidden.Insert(0,guess.ToString().ToUpper());
                     }
-                    else if (string.Equals(name[i].ToString(),guess.ToString(),StringComparison.OrdinalIgnoreCase))
+                    else if (string.Equals(name[j].ToString(),guess.ToString(),StringComparison.OrdinalIgnoreCase))
                     {
-                        hidden=hidden.Remove(i,1);
-                        hidden=hidden.Insert(i,guess.ToString().ToLower());
+                        hidden=hidden.Remove(j,1);
+                        hidden=hidden.Insert(j,guess.ToString().ToLower());
                     }
                 }
             }
-         Console.WriteLine("Congrats, the name was {0}!", name);
+
+         if (hidden==name)
+         {
+           Console.WriteLine("Congrats, the name was {0}!", name);
+         }
+         else
+         {
+            Console.WriteLine("Sorry, you have run out of guesses. Please try again!");
+         }
+         
         }
     }
 }
