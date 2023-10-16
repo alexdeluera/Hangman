@@ -52,8 +52,8 @@ namespace Hangman
                     hidden +="*";
                 }
 
-             while(hidden.Contains("*"))
-             //for(int i=0; i<=5;i++)
+             //while(hidden.Contains("*"))
+             for(int i=0; i<=5;i++)
             {
                 Console.WriteLine("Word so far:{0}", hidden);
                 Console.WriteLine("Guess a letter: ");
