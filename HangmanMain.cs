@@ -3,7 +3,7 @@ using System.Data.SQLite;
 
 namespace Hangman
 {
-    class Example3
+    class MainGame
     {
         public static void Main(string[] args)
         {
