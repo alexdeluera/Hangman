@@ -6,7 +6,7 @@ namespace Hangman
     class MainGame
     {
         public static void Main(string[] args)
-        {
+         {
             /* Create a game similar to Hangman in which a player guesses
              * letters to try to replicate a hidden word. Store at least eight
              * words. Initially, display the hidden word using asterisks to
@@ -19,7 +19,6 @@ namespace Hangman
              string name="";
              string connectionString = "Data Source=mydatabase.db;Version=3;";
 
-             
              using (SQLiteConnection connection = new SQLiteConnection(connectionString))
              {  connection.Open();
             
@@ -34,13 +33,13 @@ namespace Hangman
                             {
                             name = reader.GetString(reader.GetOrdinal("Name"));
                             }
+                            Console.WriteLine("Name gathered successfully.");
                         }
                         else
                         {
                             Console.WriteLine("No data found in the table.");
                         }
                     }
-                 Console.WriteLine("Name gathered successfully.");
                  connection.Close();
                 }
              }
